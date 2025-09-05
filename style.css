@@ -134,3 +134,45 @@ body {
     color: rgb(255, 0, 127);
   }
 }
+
+
+
+
+.keyboard {
+    margin: 1rem auto;
+    max-width: 500px;
+    user-select: none;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem 0;
+    gap: 0.25rem;
+}
+
+.key {
+    width: 2.5rem;
+    height: 3.5rem;
+    border-radius: 4px;
+    border: none;
+    background-color: #818384;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.key[data-key="Enter"],
+.key[data-key="Backspace"] {
+    width: 4rem;
+    font-size: 0.8rem;
+}
+
+.key:hover {
+    opacity: 0.9;
+}
+
+.key:active {
+    background-color: #565758;
+}

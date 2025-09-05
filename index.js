@@ -151,6 +151,23 @@ if (done || isLoading) {
   });
 }
 
+
+
+document.querySelectorAll('.key').forEach(key => {
+    key.addEventListener('click', (e) => {
+        const keyValue = e.target.getAttribute('data-key');
+        // Create and dispatch a keyboard event
+        const keyboardEvent = new KeyboardEvent('keydown', {
+            key: keyValue,
+            code: `Key${keyValue}`,
+            keyCode: keyValue.length === 1 ? keyValue.charCodeAt(0) : (keyValue === 'Enter' ? 13 : 8),
+            which: keyValue.length === 1 ? keyValue.charCodeAt(0) : (keyValue === 'Enter' ? 13 : 8),
+            bubbles: true
+        });
+        document.dispatchEvent(keyboardEvent);
+    });
+});
+
 function setLoading(isLoading) {
   loadingDiv.classList.toggle("hidden", !isLoading);
 }
